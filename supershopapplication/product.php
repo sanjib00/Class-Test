@@ -4,29 +4,23 @@
 class Product {
    
     private $product_id;
-    private $quantity;
-    private $balance;
-
-
+    private $product_quantity;
+   
     public function get_product_id() {
         return $this->product_id;
     }
 
-    public function get_quantity() {
-        return $this->quantity;
+    public function get_product_quantity() {
+        return $this->product_quantity;
     }
 
     function __construct($product_id, $quantity) {
         $this->product_id = $product_id;
-        $this->quantity = $quantity;
-        $this->balance = 0;
+        $this->product_quantity = $quantity;
     }
 
-    
-    public function addproduct($quantity) {
-        
-        $this->balance += $quantity;
-        return 'product added';
-    }
 
+    public function set_product_quantity($product_quantity) {
+        $this->product_quantity = $product_quantity;
+    }
 }

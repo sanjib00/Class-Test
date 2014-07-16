@@ -19,17 +19,17 @@
         <?php
         
         require_once 'product.php';
-        require_once 'department.php';
+        require_once 'shop.php';
         
         session_start();
         
          if(isset($_POST['addButton']))
              {
-                 $product = new Product($_POST['productIdText'], $_POST['quantityText']);
-            /* @var $department type */
-                $department = $_SESSION['department'];
-                 echo $department->add_product($product);
-                 $_SESSION['department']= $department;
+                 $a_product = new Product($_POST['productIdText'], $_POST['quantityText']);
+            /* @var $shop type */
+                $shop = $_SESSION['shop'];
+                 echo $shop->add_product($a_product);
+                 $_SESSION['shop']= $shop;
              }
        
         ?>

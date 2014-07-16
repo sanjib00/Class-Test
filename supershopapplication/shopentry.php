@@ -26,12 +26,12 @@ and open the template in the editor.
 
         <?php
         {
-            require 'department.php';
+            require 'shop.php';
             session_start();
             if (isset($_POST['createButton']))
             {
-                $department = new Department($_POST['codeText'], $_POST['nameText']);
-                $_SESSION['department'] = $department;
+                $shop = new Shop($_POST['codeText'], $_POST['nameText']);
+                $_SESSION['shop'] = $shop;
                 echo 'created';
             }
         }

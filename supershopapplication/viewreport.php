@@ -12,17 +12,17 @@ and open the template in the editor.
     <body>
         <h1> Shop Details </h1>
         <?php
-            require_once 'department.php';
+            require_once 'shop.php';
             require_once 'product.php';            
             session_start();
-            /* @var $department Department */
-            $department = $_SESSION['department'];
-            echo $department->get_code(). '<br/>';
-            echo $department->get_name(). '<br/>';
-            echo $department->get_shop_list(). '<br/>';
-            echo 'Product ID ------------ Quantity'. '<br/>';
-            foreach ($department->get_shop_list() as $a_shop) {
-            echo $a_shop->get_product_id(). ' '. $a_shop->get_quantity(). '<br/>';
+            /* @var $shop Department */
+            $shop = $_SESSION['shop'];
+            echo "Shop Code: ".$shop->get_code(). '<br/>';
+            echo "Shop Name: ".$shop->get_name(). '<br/>';
+            
+            echo 'Product-Id--->Quantity'. '<br/>';
+            foreach ($shop->get_all_products() as $a_product) {
+                echo $a_product->get_product_Id(). ' ---> '. $a_product->get_product_quantity(). '<br/>';
             }
                     
         ?>
